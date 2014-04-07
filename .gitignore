@@ -1,54 +1,23 @@
-# Byte-compiled / optimized / DLL files
+# Python bytecode:
 __pycache__/
 *.py[cod]
 
-# C extensions
-*.so
+# Packaging files:
+*.egg*
 
-# Distribution / packaging
-.Python
-env/
-bin/
-build/
-develop-eggs/
-dist/
-eggs/
-lib/
-lib64/
-parts/
-sdist/
-var/
-*.egg-info/
-.installed.cfg
-*.egg
+# SQLite3 database files:
+*.db
+*.sqlite3
 
-# Installer logs
-pip-log.txt
-pip-delete-this-directory.txt
-
-# Unit test / coverage reports
-htmlcov/
-.tox/
-.coverage
-.cache
-nosetests.xml
-coverage.xml
-
-# Translations
-*.mo
-
-# Mr Developer
-.mr.developer.cfg
-.project
-.pydevproject
-
-# Rope
-.ropeproject
-
-# Django stuff:
+# Logs:
 *.log
-*.pot
 
-# Sphinx documentation
-docs/_build/
+# Mac:
+.DS_Store
+._*
 
+# PyCharm:
+.idea
+
+# Virtual environment
+ve
