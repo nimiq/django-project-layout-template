@@ -19,6 +19,7 @@ We use Virtualenvwrapper.
 
     $ mkvirtualenv icecreamshop
 Or:
+
     $ mkvirtualenv -p /usr/bin/python2.7 icecreamshop
 
 Next set the right settings file and passwords as environment variables.
@@ -27,12 +28,15 @@ Virtualenvwrapper hook on activation:
     $ nano ~/.virtualenvs/icecreamshop/bin/postactivate
     export DJANGO_SETTINGS_MODULE=icecreamshop.settings.local
     export MY_SECRET="my_secret_password"
+
 Virtualenvwrapper hook on deactivation:
+
     $ nano ~/.virtualenvs/icecreamshop/bin/predeactivate
     unset DJANGO_SETTINGS_MODULE
     unset MY_SECRET
 
 Activate the virtual environment:
+
     $ workon icecreamshop
 
 
@@ -69,19 +73,23 @@ In particular in base.py:
 - set the static folder
 
 Create a `static` folder in *Django project root*:
+
     $ mkdir static
 
 And add to the main urls.py the settings for debug_toolbar:
-from django.conf import settings
-if settings.DEBUG:
-    import debug_toolbar
-    urlpatterns += patterns('',
-        url(r'^__debug__/', include(debug_toolbar.urls)),
-    )
+
+    ```python
+    from django.conf import settings
+    if settings.DEBUG:
+        import debug_toolbar
+        urlpatterns += patterns('',
+            url(r'^__debug__/', include(debug_toolbar.urls)),
+        )
 
 
 ### 9. Install the requirements
-    $ pip install -r requirements/local.txt
+    $ workon icecreamshop
+    $ pip install -r icecreamshop/requirements/local.txt
 
 
 ### 10. Create the db
@@ -89,12 +97,14 @@ if settings.DEBUG:
 
 
 ### 11. Run the server
-    $ python mange.py runserver_plus
+    $ python manage.py runserver_plus
 
 
 ### 12. Create the first app
-    $ pyhton manage,py startapp accounts
+    $ python manage.py startapp accounts
+
 Add some models and create a migration:
+
     $ python manage.py schemamigration accounts --initial
     $ python manage.py migrate accounts
 
@@ -107,18 +117,23 @@ The only difference is that we use virtualenv instead of virtualenvwrapper, so t
 
 ### 2. Create a virtual environment
 In production we use plain virtualenv.
+
     $ virtualenv ve
 Or:
+
     $ virtualenv ve -p /usr/bin/python2.7
 
 Next set the right settings file and passwords as environment variables.
 We also set a 50 chars SECRET_KEY.
 Virtualenv hook on activation:
+
     $ nano ve/bin/activate
     export DJANGO_SETTINGS_MODULE=icecreamshop.settings.local
     export SECRET_KEY='h65fsd^&%khfg%$#(*&hgfHJFGhJKghhjJK7&*8fHGF^%^&567'
     export MY_SECRET="my_secret_password"
+
 There is no a hook on deactivation so we won't unset those environment vars; this is not an issue.
 
 Activate the virtual environment:
+
     $ source ve/bin/activate
