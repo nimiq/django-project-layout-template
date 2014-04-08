@@ -7,7 +7,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- <link rel="shortcut icon" href="../../assets/ico/favicon.ico"> -->
+    <link rel="shortcut icon" href="{% static "img/favicon.ico" %}">
 
     <title>
         {% block title %}Icecreamshop{% endblock title %}
@@ -19,6 +19,7 @@
     <!-- Custom styles for this template -->
     {% block css %}
         <link rel="stylesheet" type="text/css" href="{% static "css/base.css" %}">
+        <link rel="stylesheet" type="text/css" href="{% static "css/header.css" %}">
     {% endblock css %}
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -30,6 +31,10 @@
 </head>
 
 <body>
+
+{% block header %}
+    {% include 'header.html' %}
+{% endblock header %}
 
 <div class="content">
     {% block content %}

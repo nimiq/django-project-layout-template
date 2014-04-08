@@ -10,6 +10,12 @@
         {{  block.super }} - Home
 {% endblock title %}
 
+{% comment %}
+    {# Remove the header #}
+    {% block header %}
+    {% endblock header %}
+{% endcomment %}
+
 {% block content %}
     <h1>Home Page!!</h1>
 {% endblock content %}
