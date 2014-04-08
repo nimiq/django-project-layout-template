@@ -26,13 +26,19 @@ Next set the right settings file and passwords as environment variables.
 Virtualenvwrapper hook on activation:
 
     $ nano ~/.virtualenvs/icecreamshop/bin/postactivate
+    # Settings
     export DJANGO_SETTINGS_MODULE=icecreamshop.settings.local
+
+    # Passwords
     export MY_SECRET="my_secret_password"
 
 Virtualenvwrapper hook on deactivation:
 
     $ nano ~/.virtualenvs/icecreamshop/bin/predeactivate
+    # Settings
     unset DJANGO_SETTINGS_MODULE
+
+    # Passwords
     unset MY_SECRET
 
 Optionally make a copy of the environment variables (the passwords) in the file:
