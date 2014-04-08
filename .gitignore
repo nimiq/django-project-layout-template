@@ -21,3 +21,6 @@ __pycache__/
 
 # Virtual environment
 ve
+
+# Optional local copy of environment variables
+vars.environment

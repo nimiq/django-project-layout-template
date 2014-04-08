@@ -35,6 +35,11 @@ Virtualenvwrapper hook on deactivation:
     unset DJANGO_SETTINGS_MODULE
     unset MY_SECRET
 
+Optionally make a copy of the environment variables (the passwords) in the file:
+    `icecreamshop/icecreamshop/settings/vars.environment`
+This file will be IGNORED by Git, so it will be stored only in your local machine.
+You might need it in case you accidentally remove your virtual environment and lose your passwords.
+
 Reactivate the virtual environment:
 
     $ deactivate
