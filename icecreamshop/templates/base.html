@@ -19,7 +19,7 @@
     <!-- Custom styles for this template -->
     {% block css %}
         <link rel="stylesheet" type="text/css" href="{% static "css/base.css" %}">
-        <link rel="stylesheet" type="text/css" href="{% static "css/header.css" %}">
+        <link rel="stylesheet" type="text/css" href="{% static "css/_header.css" %}">
     {% endblock css %}
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -33,7 +33,7 @@
 <body>
 
 {% block header %}
-    {% include 'header.html' %}
+    {% include '_header.html' %}
 {% endblock header %}
 
 <div class="content">
