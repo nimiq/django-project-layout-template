@@ -35,8 +35,9 @@ Virtualenvwrapper hook on deactivation:
     unset DJANGO_SETTINGS_MODULE
     unset MY_SECRET
 
-Activate the virtual environment:
+Reactivate the virtual environment:
 
+    $ deactivate
     $ workon icecreamshop
 
 
