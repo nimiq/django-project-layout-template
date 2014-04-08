@@ -88,10 +88,16 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-# EDIT: Static files shared among all apps
+# EDIT: Static files shared amongst all apps
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
+
+# EDIT: Templates shared amongst all apps
+TEMPLATE_DIRS = (
+    os.path.join(BASE_DIR, 'templates'),
+)
+
 
 # EDIT: settings for accounts app
 #LOGIN_URL = ''  # Default: '/accounts/login/'
