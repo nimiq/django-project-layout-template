@@ -90,7 +90,6 @@ Create a `static` folder in *Django project root*:
 
 And add to the main urls.py the settings for debug_toolbar:
 
-    ```python
     from django.conf import settings
     if settings.DEBUG:
         import debug_toolbar
